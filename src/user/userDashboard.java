@@ -77,6 +77,11 @@ public class userDashboard extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel6.setText("View Employee");
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -214,11 +219,20 @@ public class userDashboard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-    
-        loginForm lfm = new loginForm();
-        lfm.setVisible(true);
-        this.dispose();
+
     }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+    
+       userInfo usi = new userInfo();
+
+        usi.u_username.setText("@" + loginForm.l_username);
+        usi.u_position.setText(loginForm.type);
+        usi.u_fullname.setText(loginForm.fullname);
+        usi.u_email.setText(loginForm.emiel);
+        usi.u_accountstat.setText(loginForm.status);
+        usi.setVisible(true);
+    }//GEN-LAST:event_jLabel6MouseClicked
 
     /**
      * @param args the command line arguments

@@ -17,23 +17,45 @@ public class loginForm extends javax.swing.JFrame {
         initComponents();
     }
     
-public static boolean loginAcc(String username, String password){
+
+    public static String surnam;
+    public static String names;
+    public static String status;
+    public static String type;
+    public static String fullname;
+    public static String l_username;
+    public static String emiel;
+    public static String passw;
+    
+    public static boolean loginAcc(String uname, String pass){
         dbConnector connector = new dbConnector();
         try{
-            String query = "SELECT * FROM tbl_user  WHERE u_username = '" + username + "' AND u_pass = '" + password + "' AND stat = 'Active'";
-            ResultSet resultSet = connector.getData(query);
-            return resultSet.next();
+            String query = "SELECT * FROM tbl_user  WHERE u_username = '" + uname + "' AND u_pass = '" + pass + "' AND stat = 'Active'";
+            ResultSet resultSet = connector.getData(query);       
+            if(resultSet.next()){
+                passw = resultSet.getString("u_pass");
+                emiel = resultSet.getString("email");
+                l_username = resultSet.getString("u_username");
+                status = resultSet.getString("stat");
+                type = resultSet.getString("u_type");
+                names = resultSet.getString("u_fname");
+                surnam = resultSet.getString("u_lname");
+                fullname = names + " " + surnam;
+                
+                return true;
+            }else{
+                return false; 
+            }
         }catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Database Connection Error!");
             return false;
         }
 
     }
-    
-public static boolean checkAdmin(String user1){
+    public static boolean checkAdmin(String user){
         dbConnector connect = new dbConnector();
         try{
-            String query = "SELECT * FROM tbl_user WHERE u_username = '" +user1+"' AND u_type = 'Manager'";
+            String query = "SELECT * FROM tbl_user WHERE u_username = '" +user+"' AND u_type = 'Manager'";
             ResultSet resultSet = connect.getData(query);
             return resultSet.next();
         }catch(SQLException ex){
@@ -41,8 +63,8 @@ public static boolean checkAdmin(String user1){
             return false;
     }      
     }
-
- 
+    
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

@@ -2,6 +2,7 @@
 package vrapps;
 
 import config.dbConnector;
+import java.security.MessageDigest;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
@@ -44,6 +45,23 @@ public boolean duplicateCheck(){
             return false;
         }
 }
+public static String hashPass(String password){
+        try{
+            MessageDigest md = MessageDigest.getInstance("SHA");
+            md.update(password.getBytes());
+            byte[] rbt = md.digest();
+            StringBuilder sb = new StringBuilder();
+            
+            for(byte b: rbt){
+                sb.append(String.format("%02x", b));
+            }
+            return sb.toString(); 
+            
+        }catch(Exception e){ 
+        }
+        return null;
+    }
+
 
 
     @SuppressWarnings("unchecked")
@@ -154,7 +172,7 @@ public boolean duplicateCheck(){
                                 .addComponent(ps, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(ut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,7 +204,7 @@ public boolean duplicateCheck(){
                     .addComponent(jLabel9))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -200,7 +218,7 @@ public boolean duplicateCheck(){
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(466, 450));
+        setSize(new java.awt.Dimension(484, 486));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
