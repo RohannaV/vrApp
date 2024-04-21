@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import user.userDashboard;
+import static vrapps.regForm.hashPass;
 
 
 
@@ -55,7 +56,7 @@ public class loginForm extends javax.swing.JFrame {
     public static boolean checkAdmin(String user){
         dbConnector connect = new dbConnector();
         try{
-            String query = "SELECT * FROM tbl_user WHERE u_username = '" +user+"' AND u_type = 'Manager'";
+            String query = "SELECT * FROM tbl_user WHERE u_username = '" +user+"' AND u_type = 'HR Representative'";
             ResultSet resultSet = connect.getData(query);
             return resultSet.next();
         }catch(SQLException ex){
@@ -74,7 +75,7 @@ public class loginForm extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         user = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        pass = new javax.swing.JPasswordField();
+        passs = new javax.swing.JPasswordField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -115,11 +116,11 @@ public class loginForm extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
 
-        pass.setBackground(new java.awt.Color(153, 153, 153));
-        pass.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
-        pass.addActionListener(new java.awt.event.ActionListener() {
+        passs.setBackground(new java.awt.Color(153, 153, 153));
+        passs.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
+        passs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passActionPerformed(evt);
+                passsActionPerformed(evt);
             }
         });
 
@@ -171,7 +172,7 @@ public class loginForm extends javax.swing.JFrame {
                             .addComponent(jLabel9)
                             .addComponent(jLabel7)
                             .addComponent(user)
-                            .addComponent(pass)
+                            .addComponent(passs)
                             .addComponent(jLabel6)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -199,12 +200,12 @@ public class loginForm extends javax.swing.JFrame {
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pass, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(passs, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(76, 76, 76)
@@ -236,29 +237,34 @@ public class loginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_userActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-      if(loginAcc(user.getText(), pass.getText())){
-            String username = user.getText();
-            if(checkAdmin(username)){
-                JOptionPane.showMessageDialog(null, "LOG In As HR Representative");
+       
+        String pass = hashPass(passs.getText());
+        dbConnector connector = new dbConnector();  
+        if(loginAcc(user.getText(), pass)){
+            String userna = user.getText();
+            if(checkAdmin(userna)){
                 adminDashboard ads = new adminDashboard();
+                ads.adminName.setText("" +fullname);
+                ads.adminPosition.setText("" +type);
                 ads.setVisible(true);
                 this.dispose();
             }else{
-                JOptionPane.showMessageDialog(null, "Log In As Manager");
-                userDashboard adss = new userDashboard();
-                adss.setVisible(true);
+                userDashboard usr = new userDashboard();
+                usr.adminN.setText("" +fullname);
+                usr.adminP.setText("" +type);
+                usr.setVisible(true);
                 this.dispose();
+
             }
             this.dispose();
         }else{
             JOptionPane.showMessageDialog(null, "Log In Failed");        
-        }  
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passActionPerformed
+    private void passsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_passActionPerformed
+    }//GEN-LAST:event_passsActionPerformed
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
 
@@ -319,7 +325,7 @@ public class loginForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField pass;
+    private javax.swing.JPasswordField passs;
     private javax.swing.JTextField user;
     // End of variables declaration//GEN-END:variables
 }

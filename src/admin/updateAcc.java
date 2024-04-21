@@ -1,21 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package admin;
 
 import config.dbConnector;
 
-/**
- *
- * @author Izzy
- */
+
 public class updateAcc extends javax.swing.JFrame {
 
-    /**
-     * Creates new form updateAcc
-     */
+    
     public updateAcc() {
         initComponents();
     }
