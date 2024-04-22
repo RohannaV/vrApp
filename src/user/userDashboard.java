@@ -248,6 +248,7 @@ public class userDashboard extends javax.swing.JFrame {
         usi.u_email.setText(loginForm.emiel);
         usi.u_accountstat.setText(loginForm.status);
         usi.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabel6MouseClicked
 
     /**

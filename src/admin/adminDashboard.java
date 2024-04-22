@@ -11,9 +11,7 @@ import vrapps.regForm;
 
 public class adminDashboard extends javax.swing.JFrame {
 
-    /**
-     * Creates new form adminDashboard
-     */
+ 
     public adminDashboard() {
         initComponents();
         

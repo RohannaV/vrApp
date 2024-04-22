@@ -2,6 +2,7 @@
 package user;
 
 import config.dbConnector;
+import java.security.MessageDigest;
 import javax.swing.JOptionPane;
 import vrapps.loginForm;
 import static vrapps.regForm.hashPass;
@@ -10,6 +11,7 @@ import static vrapps.regForm.hashPass;
 public class changePass extends javax.swing.JFrame {
 
     private String origPass;
+    
     public changePass() {       
         initComponents();
         origPass = loginForm.passw;
@@ -22,6 +24,8 @@ private void updatePassword(String newPassword) {
         connector.updateData(query);
         
     }
+
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -77,6 +81,11 @@ private void updatePassword(String newPassword) {
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
+            }
+        });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -158,23 +167,30 @@ private void updatePassword(String newPassword) {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
      
-        String pass = hashPass(newPass.getText());
-        String orgPassw = orgPasswo.getText();
-        String newPassw = pass;
-        if (!orgPassw.equals(origPass)) {
-            JOptionPane.showMessageDialog(null, "Original password is incorrect.");
-            return;
-        }
-        updatePassword(newPassw);
-        JOptionPane.showMessageDialog(null, "Password updated successfully!.");
-        userDashboard u = new userDashboard();
-        u.setVisible(true);
-        this.dispose();
+        String pass = hashPass(newPass.getText()); 
+        String orig = hashPass(orgPasswo.getText()); 
+        String newPassw = pass; 
+        if (!orig.equals(origPass)) { 
+            JOptionPane.showMessageDialog(null, "Original password is incorrect."); 
+            return; 
+        } 
+            updatePassword(newPassw); JOptionPane.showMessageDialog(null, "Password updated successfully!."); 
+            userDashboard u = new userDashboard(); 
+            u.setVisible(true);
+            this.dispose();
+        
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-        // TODO add your handling code here:
+     
+        userInfo usr = new userInfo();
+        usr.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
