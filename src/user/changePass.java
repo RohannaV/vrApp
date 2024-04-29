@@ -159,6 +159,7 @@ private void updatePassword(String newPassword) {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void orgPasswoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orgPasswoActionPerformed
