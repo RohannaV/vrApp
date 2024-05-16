@@ -11,6 +11,79 @@ public class session {
     private String username;
     private String position;    
     private String status;
+    private String age;
+    private String address;
+    private String gender;
+    private String daysduty;
+    private String basicsal;    
+    private String pagibig;
+    private String philhealth;    
+    private String sss;
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getDaysduty() {
+        return daysduty;
+    }
+
+    public void setDaysduty(String daysduty) {
+        this.daysduty = daysduty;
+    }
+
+    public String getBasicsal() {
+        return basicsal;
+    }
+
+    public void setBasicsal(String basicsal) {
+        this.basicsal = basicsal;
+    }
+
+    public String getPagibig() {
+        return pagibig;
+    }
+
+    public void setPagibig(String pagibig) {
+        this.pagibig = pagibig;
+    }
+
+    public String getPhilhealth() {
+        return philhealth;
+    }
+
+    public void setPhilhealth(String philhealth) {
+        this.philhealth = philhealth;
+    }
+
+    public String getSss() {
+        return sss;
+    }
+
+    public void setSss(String sss) {
+        this.sss = sss;
+    }
+    
 
     private session(){
         //Private constructor to prevent instantiate another instance
