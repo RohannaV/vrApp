@@ -113,7 +113,7 @@ public class userDashboard extends javax.swing.JFrame {
         );
 
         jPanel5.add(jPanel3);
-        jPanel3.setBounds(50, 40, 170, 60);
+        jPanel3.setBounds(50, 40, 167, 60);
 
         jPanel4.setBackground(new java.awt.Color(102, 102, 102));
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -121,7 +121,12 @@ public class userDashboard extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel7.setText("Employee");
-        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
+        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, 40));
 
         jPanel5.add(jPanel4);
         jPanel4.setBounds(280, 40, 180, 60);
@@ -288,6 +293,13 @@ public class userDashboard extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_formWindowActivated
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+       
+        employee ploy = new employee();
+        ploy.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel7MouseClicked
 
     /**
      * @param args the command line arguments
