@@ -3,6 +3,8 @@ package user;
 
 import admin.*;
 import Config.session;
+import static admin.updateAcc.checkEmail;
+import static admin.updateAcc.checkUserName;
 import config.dbConnector;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,6 +17,7 @@ public class updateAccemp extends javax.swing.JFrame {
     public updateAccemp() {
         initComponents();
     }
+    
     
     public void getdata(int id){
           dbConnector dbc = new dbConnector();
@@ -95,6 +98,7 @@ public class updateAccemp extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel1.setText("Employee ID");
 
+        eid.setEditable(false);
         eid.setBackground(new java.awt.Color(153, 153, 153));
         eid.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         eid.addActionListener(new java.awt.event.ActionListener() {
@@ -223,7 +227,7 @@ public class updateAccemp extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lname, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
                             .addComponent(fname)
-                            .addComponent(eid, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(eid))))
                 .addGap(0, 43, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(62, 62, 62)
@@ -335,35 +339,32 @@ public class updateAccemp extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void eidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eidActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_eidActionPerformed
-
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-
+        
         dbConnector dbc = new dbConnector();
         
-        try{
-          
-            if(dbc.insertData("UPDATE employee SET e_fname = '" + fname.getText() + "', "
-                    + "VALUES ('"+fname.getText()+"',"
-                    + " '"+lname.getText()+"', "
-                    + " '"+eage.getText()+"', "
-                    + " '"+eadd.getText()+"', "
-                    + " '"+egen.getSelectedItem()+"', "
-                    + " '"+edd.getSelectedItem()+"', "
-                    + " '"+ebs.getText()+"', "
-                    + " '"+epi.getText()+"', "
-                    + " '"+eph.getText()+"', "
-                    + " '"+esss.getText()+"' )")){
+        try{           
+            if(dbc.insertData("UPDATE employee SET "
+                            + "e_fname = '" + fname.getText() + "', "
+                            + "e_lname = '" + lname.getText() + "', "
+                            + "e_age = '" + eage.getText() + "', "
+                            + "e_address = '" + eadd.getText() + "',"
+                            + "e_gender = '" + egen.getSelectedItem() + "',"
+                            + "days_duty = '" + edd.getSelectedItem() + "', "
+                            + "basicsal = '" + ebs.getText() + "', "
+                            + "pagibig = '" + epi.getText() + "', "
+                            + "philhealth = '" + eph.getText() + "',"
+                            + "sss = '" + esss.getText()+ "'"
+                            + "WHERE e_id = '" +Integer.valueOf(eid.getText())+"'")){
                 JOptionPane.showMessageDialog(null, "Changes Saved!");
-                employee ea = new employee();
-                ea.setVisible(true);
+                employee ua = new employee();
+                ua.setVisible(true);
                 this.dispose();
                 getdata(Integer.valueOf(eid.getText()));
         }
         }catch(Exception ex){
-            System.out.println(""+ex);
+            System.out.println(""+ex);    
+            
         }
     }//GEN-LAST:event_jButton1MouseClicked
 
@@ -381,6 +382,10 @@ public class updateAccemp extends javax.swing.JFrame {
         up.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel15MouseClicked
+
+    private void eidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eidActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eidActionPerformed
 
    
     public static void main(String args[]) {
@@ -417,15 +422,15 @@ public class updateAccemp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField eadd;
+    public javax.swing.JTextField eadd;
     public javax.swing.JTextField eage;
-    private javax.swing.JTextField ebs;
-    private javax.swing.JComboBox<String> edd;
-    private javax.swing.JComboBox<String> egen;
+    public javax.swing.JTextField ebs;
+    public javax.swing.JComboBox<String> edd;
+    public javax.swing.JComboBox<String> egen;
     public javax.swing.JTextField eid;
-    private javax.swing.JTextField eph;
-    private javax.swing.JTextField epi;
-    private javax.swing.JTextField esss;
+    public javax.swing.JTextField eph;
+    public javax.swing.JTextField epi;
+    public javax.swing.JTextField esss;
     public javax.swing.JTextField fname;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

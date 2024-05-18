@@ -358,7 +358,8 @@ public class newAccemployee extends javax.swing.JFrame {
     
         dbConnector db = new dbConnector();
         
-                if(db.insertData("INSERT INTO employee (e_fname, e_lname, e_age, e_address, e_gender, days_duty, basicsal, pagibig, philhealth, sss) "
+                if(db.insertData("INSERT INTO employee (e_fname, e_lname, e_age, e_address, e_gender, days_duty,"
+                        + " basicsal, pagibig, philhealth, sss) "
                     + "VALUES ('"+fn.getText()+"',"
                     + " '"+ln.getText()+"', "
                     + " '"+age.getText()+"', "
