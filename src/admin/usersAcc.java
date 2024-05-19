@@ -23,7 +23,10 @@ public class usersAcc extends javax.swing.JFrame {
   public void usersAcc(){
         try{
             dbConnector dbc = new dbConnector();
-            ResultSet rs = dbc.getData("SELECT u_id, u_fname, u_lname, email, u_username, u_pass, u_type, stat FROM tbl_user");
+            ResultSet rs = dbc.getData("SELECT u_id as 'ID', u_fname as 'First Name',"
+                    + " u_lname as 'Last Name', email as 'Email',"
+                    + " u_username as 'Username', u_pass as 'Password',"
+                    + " u_type as 'Position', stat FROM tbl_user");
             users.setModel(DbUtils.resultSetToTableModel(rs));
             rs.close();
         }catch(SQLException ex){
@@ -105,7 +108,7 @@ public class usersAcc extends javax.swing.JFrame {
                 jLabel1MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 100, 30));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 100, 30));
 
         jLabel2.setBackground(new java.awt.Color(255, 204, 0));
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -117,7 +120,7 @@ public class usersAcc extends javax.swing.JFrame {
                 jLabel2MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 161, 100, 30));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 100, 30));
 
         jLabel3.setBackground(new java.awt.Color(255, 204, 0));
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -129,7 +132,7 @@ public class usersAcc extends javax.swing.JFrame {
                 jLabel3MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 191, 100, 30));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 100, 30));
 
         jLabel4.setBackground(new java.awt.Color(255, 204, 0));
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -141,7 +144,7 @@ public class usersAcc extends javax.swing.JFrame {
                 jLabel4MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 221, 100, 30));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 100, 30));
 
         searchText.setBackground(new java.awt.Color(153, 153, 153));
         searchText.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
@@ -155,18 +158,18 @@ public class usersAcc extends javax.swing.JFrame {
                 searchTextKeyReleased(evt);
             }
         });
-        jPanel1.add(searchText, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, 240, 30));
+        jPanel1.add(searchText, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 240, 30));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Search");
-        jLabel7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jLabel7.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 0, new java.awt.Color(0, 0, 0)));
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel7MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 70, 60, 30));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 60, 20));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8-back-24.png"))); // NOI18N
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
