@@ -52,6 +52,7 @@ public class employee extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(569, 434));
@@ -159,6 +160,17 @@ public class employee extends javax.swing.JFrame {
             }
         });
 
+        jLabel9.setBackground(new java.awt.Color(255, 204, 0));
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Payroll");
+        jLabel9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel9MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -173,7 +185,9 @@ public class employee extends javax.swing.JFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -204,7 +218,9 @@ public class employee extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -239,6 +255,26 @@ public class employee extends javax.swing.JFrame {
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
     
+//        
+//        int rowIndex = users.getSelectedRow();
+//        if(rowIndex<0){
+//            JOptionPane.showMessageDialog(null, "Please Select an Account");
+//        }else{
+//            TableModel model = users.getModel();
+//            Object ide = model.getValueAt(rowIndex, 0);
+//            Object finame = model.getValueAt(rowIndex, 1);
+//            Object laname = model.getValueAt(rowIndex, 2);
+//            
+//            String id = ide.toString();
+//            int a = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this account?" +finame+" "+laname);
+//            if(a == JOptionPane.YES_OPTION){
+//                dbConnector dbc = new dbConnector();
+//                int u_id = Integer.parseInt(id);
+//                dbc.deleteData(u_id, "tbl_user");
+//                usersAcc();
+//            }
+//        }
+        
         int rowIndex = etable.getSelectedRow();
         if(rowIndex<0){
             JOptionPane.showMessageDialog(null, "Please Select an Account");
@@ -249,12 +285,13 @@ public class employee extends javax.swing.JFrame {
             Object lname = model.getValueAt(rowIndex, 2);
             
             String eid = ide.toString();
-            int a = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this account?"+fname+" "+lname);
+            int a = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this account?" +fname+" "+lname);
             if(a == JOptionPane.YES_OPTION){
                 dbConnector dbc = new dbConnector();
                 int e_id = Integer.parseInt(eid);
                 dbc.deleteData(e_id, "employee");
                 employee();
+                
             }
         }
     }//GEN-LAST:event_jLabel5MouseClicked
@@ -312,6 +349,31 @@ public class employee extends javax.swing.JFrame {
         srch.setRowFilter(RowFilter.regexFilter("(?i)" +se.getText()));
     }//GEN-LAST:event_jLabel1MouseClicked
 
+    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+        // TODO add your handling code here:
+        
+        int rowindex = etable.getSelectedRow();
+        
+        if(rowindex < 0){
+            JOptionPane.showMessageDialog(null, "Please select an Account");
+        }else{
+            TableModel model = etable.getModel();
+            salcal employ = new salcal();
+            employ.ids.setText(""+model.getValueAt(rowindex, 0));
+            employ.txten.setText(""+model.getValueAt(rowindex, 1));
+            employ.lnames.setText(""+model.getValueAt(rowindex, 2));
+            employ.txtallow.setText(""+model.getValueAt(rowindex, 7));
+            employ.txtother.setText(""+model.getValueAt(rowindex, 6));
+            employ.txtpi.setText(""+model.getValueAt(rowindex, 8));
+            employ.txtph.setText(""+model.getValueAt(rowindex, 9));
+            employ.txtsss.setText(""+model.getValueAt(rowindex, 10));
+            employ.setVisible(true);
+            this.dispose();
+        }
+        
+        
+    }//GEN-LAST:event_jLabel9MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -357,6 +419,7 @@ public class employee extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
