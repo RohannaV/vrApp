@@ -362,8 +362,8 @@ public class employee extends javax.swing.JFrame {
             employ.ids.setText(""+model.getValueAt(rowindex, 0));
             employ.txten.setText(""+model.getValueAt(rowindex, 1));
             employ.lnames.setText(""+model.getValueAt(rowindex, 2));
-            employ.txtallow.setText(""+model.getValueAt(rowindex, 7));
-            employ.txtother.setText(""+model.getValueAt(rowindex, 6));
+            employ.txtbs.setText(""+model.getValueAt(rowindex, 7));
+            employ.txtdaysduty.setText(""+model.getValueAt(rowindex, 6));
             employ.txtpi.setText(""+model.getValueAt(rowindex, 8));
             employ.txtph.setText(""+model.getValueAt(rowindex, 9));
             employ.txtsss.setText(""+model.getValueAt(rowindex, 10));

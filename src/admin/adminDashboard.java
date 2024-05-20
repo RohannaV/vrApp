@@ -71,7 +71,7 @@ public class adminDashboard extends javax.swing.JFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         adminName.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        adminName.setText("HR Representative");
+        adminName.setText("User Name");
 
         adminPosition.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         adminPosition.setText("Position");

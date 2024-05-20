@@ -224,7 +224,7 @@ public class userDashboard extends javax.swing.JFrame {
     
        userInfo usi = new userInfo();
 
-        usi.u_username.setText("@" + loginForm.l_username);
+        usi.u_username.setText(loginForm.l_username);
         usi.u_position.setText(loginForm.type);
         usi.u_fullname.setText(loginForm.fullname);
         usi.u_email.setText(loginForm.emiel);

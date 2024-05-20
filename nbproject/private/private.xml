@@ -3,21 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/SCC/Desktop/payroll/vrApp/src/user/userInfo.java</file>
-            <file>file:/C:/Users/SCC/Desktop/payroll/vrApp/src/user/updateAccemp.java</file>
-            <file>file:/C:/Users/SCC/Desktop/payroll/vrApp/src/config/session.java</file>
-            <file>file:/C:/Users/SCC/Desktop/payroll/vrApp/src/vrapps/regForm.java</file>
-            <file>file:/C:/Users/SCC/Desktop/payroll/vrApp/src/admin/usersAcc.java</file>
-            <file>file:/C:/Users/SCC/Desktop/payroll/vrApp/src/vrapps/loginForm.java</file>
-            <file>file:/C:/Users/SCC/Desktop/payroll/vrApp/src/user/employee.java</file>
-            <file>file:/C:/Users/SCC/Desktop/payroll/vrApp/src/user/userDashboard.java</file>
-            <file>file:/C:/Users/SCC/Desktop/payroll/vrApp/src/admin/adminDashboard.java</file>
-            <file>file:/C:/Users/SCC/Desktop/payroll/vrApp/src/admin/updateAcc.java</file>
-            <file>file:/C:/Users/SCC/Desktop/payroll/vrApp/src/user/newAccemployee.java</file>
-            <file>file:/C:/Users/SCC/Desktop/payroll/vrApp/src/user/changePass.java</file>
-            <file>file:/C:/Users/SCC/Desktop/payroll/vrApp/src/user/salcal.java</file>
-            <file>file:/C:/Users/SCC/Desktop/payroll/vrApp/src/config/dbConnector.java</file>
-            <file>file:/C:/Users/SCC/Desktop/payroll/vrApp/src/admin/newAcc.java</file>
+            <file>file:/C:/Users/ADMIN/Desktop/Payroll/vrApp/src/user/employee.java</file>
+            <file>file:/C:/Users/ADMIN/Desktop/Payroll/vrApp/src/admin/updateAcc.java</file>
+            <file>file:/C:/Users/ADMIN/Desktop/Payroll/vrApp/src/user/userDashboard.java</file>
+            <file>file:/C:/Users/ADMIN/Desktop/Payroll/vrApp/src/vrapps/regForm.java</file>
+            <file>file:/C:/Users/ADMIN/Desktop/Payroll/vrApp/src/user/changePass.java</file>
+            <file>file:/C:/Users/ADMIN/Desktop/Payroll/vrApp/src/admin/adminDashboard.java</file>
+            <file>file:/C:/Users/ADMIN/Desktop/Payroll/vrApp/src/admin/newAcc.java</file>
+            <file>file:/C:/Users/ADMIN/Desktop/Payroll/vrApp/src/user/salcal.java</file>
+            <file>file:/C:/Users/ADMIN/Desktop/Payroll/vrApp/src/user/userInfo.java</file>
+            <file>file:/C:/Users/ADMIN/Desktop/Payroll/vrApp/src/user/updateAccemp.java</file>
+            <file>file:/C:/Users/ADMIN/Desktop/Payroll/vrApp/src/vrapps/loginForm.java</file>
         </group>
     </open-files>
 </project-private>

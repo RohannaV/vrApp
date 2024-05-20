@@ -52,7 +52,7 @@ public class userInfo extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel2.setText("Name:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel3.setText("Email:");
@@ -86,16 +86,16 @@ public class userInfo extends javax.swing.JFrame {
         jPanel1.add(u_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 240, 30));
 
         u_position.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jPanel1.add(u_position, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 230, 30));
+        jPanel1.add(u_position, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 230, 40));
 
         u_fullname.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jPanel1.add(u_fullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 240, 30));
+        jPanel1.add(u_fullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 240, 30));
 
         u_email.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jPanel1.add(u_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 250, 30));
+        jPanel1.add(u_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, 250, 30));
 
         u_accountstat.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jPanel1.add(u_accountstat, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, 220, 30));
+        jPanel1.add(u_accountstat, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 220, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
