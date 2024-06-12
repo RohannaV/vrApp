@@ -257,25 +257,26 @@ public class loginForm extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        
-        String pass = hashPass(passs.getText());
-        dbConnector connector = new dbConnector();  
+        String pass = hashPass(passs.getText());  
         if(loginAcc(user.getText(), pass)){
-            String userna = user.getText();
-            if(checkAdmin(userna)){
+            
+            if(!status.equals("Active")){
+                JOptionPane.showMessageDialog(null, "In-Active Account, please notify the Manager");
+            }else{
+            if(type.equals("Manager")){
                 adminDashboard ads = new adminDashboard();
-                ads.adminName.setText("" +fullname);
-                ads.adminPosition.setText("" +type);
                 ads.setVisible(true);
                 this.dispose();
-            }else{
+            }else if(type.equals("HR Representative")){
                 userDashboard usr = new userDashboard();
-                usr.adminN.setText("" +fullname);
-                usr.adminP.setText("" +type);
                 usr.setVisible(true);
                 this.dispose();
 
+            }else{
+                JOptionPane.showMessageDialog(null, "No Account Found,Contact the Manager");
             }
-            this.dispose();
+          
+            }
         }else{
             JOptionPane.showMessageDialog(null, "Log In Failed");        
         }

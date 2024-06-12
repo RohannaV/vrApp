@@ -2,6 +2,7 @@
 package user;
 
 import Config.session;
+import javax.swing.JOptionPane;
 import vrapps.loginForm;
 
 
@@ -32,8 +33,8 @@ public class userDashboard extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
-        adminN = new javax.swing.JLabel();
-        adminP = new javax.swing.JLabel();
+        username = new javax.swing.JLabel();
+        posi = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -133,11 +134,11 @@ public class userDashboard extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(153, 153, 153));
         jPanel6.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
-        adminN.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        adminN.setText("User Name");
+        username.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        username.setText("User Name");
 
-        adminP.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        adminP.setText("Position");
+        posi.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        posi.setText("Position");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -146,17 +147,17 @@ public class userDashboard extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(adminN)
-                    .addComponent(adminP))
+                    .addComponent(username)
+                    .addComponent(posi))
                 .addContainerGap(432, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(adminN)
+                .addComponent(username)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(adminP)
+                .addComponent(posi)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -236,7 +237,19 @@ public class userDashboard extends javax.swing.JFrame {
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
         
-        
+        session ss = session.getInstance();
+        String firstname = ss.getFname();
+        String lastname = ss.getLname();
+        String fullname = firstname + " " +lastname;
+        if(ss.getId() == 0){
+            JOptionPane.showMessageDialog(null, "No account, Log In First");
+            loginForm li = new loginForm();
+            li.setVisible(true);
+            this.dispose();    
+        }else{
+            username.setText(""+fullname);
+            posi.setText(""+ss.getPosition());  
+        } 
     }//GEN-LAST:event_formWindowActivated
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
@@ -282,8 +295,6 @@ public class userDashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JLabel adminN;
-    public javax.swing.JLabel adminP;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -300,5 +311,7 @@ public class userDashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    public javax.swing.JLabel posi;
+    public javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,6 +1,7 @@
 
 package admin;
 
+import Config.session;
 import config.dbConnector;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -44,6 +45,11 @@ public class adminDashboard extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
@@ -143,6 +149,11 @@ public class adminDashboard extends javax.swing.JFrame {
 
         jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel15.setText("Reports");
+        jLabel15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel15MouseClicked(evt);
+            }
+        });
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/3.png"))); // NOI18N
 
@@ -259,6 +270,31 @@ public class adminDashboard extends javax.swing.JFrame {
     private void jPanel5ComponentRemoved(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_jPanel5ComponentRemoved
         // TODO add your handling code here:
     }//GEN-LAST:event_jPanel5ComponentRemoved
+
+    private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
+      
+        report rpt = new report();
+        rpt.setVisible (true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel15MouseClicked
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+                // TODO add your handling code here:
+        session ss = session.getInstance();
+        String firstname = ss.getFname();
+        String lastname = ss.getLname();
+        String fullname = firstname + " " +lastname;
+        if(ss.getId() == 0){
+            JOptionPane.showMessageDialog(null, "No account, Log In First");
+            loginForm li = new loginForm();
+            li.setVisible(true);
+            this.dispose();    
+        }else{
+            adminName.setText(""+fullname);
+            adminPosition.setText(""+ss.getPosition());  
+        }  
+    }//GEN-LAST:event_formWindowActivated
 
    
     public static void main(String args[]) {
