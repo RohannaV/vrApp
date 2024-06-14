@@ -276,6 +276,7 @@ public class salcal extends javax.swing.JFrame {
                 .addGap(20, 20, 20))
         );
 
+        jButton1.setBackground(new java.awt.Color(255, 204, 0));
         jButton1.setText("Calculate");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -283,6 +284,7 @@ public class salcal extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(255, 204, 0));
         jButton2.setText("Clear");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -290,6 +292,7 @@ public class salcal extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(255, 204, 0));
         jButton3.setText("Print");
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -392,11 +395,11 @@ public class salcal extends javax.swing.JFrame {
                             .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
                             .addComponent(txtnp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jButton3))
-                .addGap(39, 39, 39)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
-                .addContainerGap(40, Short.MAX_VALUE))
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8-back-24.png"))); // NOI18N
@@ -414,27 +417,22 @@ public class salcal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
+                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(251, 251, 251))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addContainerGap())))))
+                        .addComponent(jLabel1)
+                        .addGap(235, 235, 235)
+                        .addComponent(jLabel3)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
-                .addGap(3, 3, 3)
-                .addComponent(jLabel1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -508,18 +506,18 @@ public class salcal extends javax.swing.JFrame {
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
 
-        txtbill.setText(txtbill.getText() + "\n\tEmployee ID:" + " " + ids.getText() + "\n");
-        txtbill.setText(txtbill.getText() + "\n\tEmployee Name:" + " " + txten.getText() + lnames.getText() + "\n");
-        txtbill.setText(txtbill.getText() + "\n\tNet Pay:" + " " + txtnp.getText() + "\n");
+        txtbill.setText(txtbill.getText() + "\nEmployee ID:" + " " + ids.getText() + "\n");
+        txtbill.setText(txtbill.getText() + "\nEmployee Name:" + " " + txten.getText() + lnames.getText() + "\n");
+        txtbill.setText(txtbill.getText() + "\nNet Pay:" + " " + txtnp.getText() + "\n");
         txtbill.setText(txtbill.getText() + "\n---------------------------------------------------------------------------------" +  "\n");
-        txtbill.setText(txtbill.getText() + "\n\t\tBasic Salary:" + " " + txtbs.getText() + "\n");
-        txtbill.setText(txtbill.getText() + "\n\t\tDays of Duty:" + " " + txtdaysduty.getText() + "\n");
-        txtbill.setText(txtbill.getText() + "\n\tGross Salary:" + " " + txtgs.getText() + "\n");
-        txtbill.setText(txtbill.getText() + "\n\t\tPag-Ibig:" + " " + txtpi.getText() + "\n");
-        txtbill.setText(txtbill.getText() + "\n\t\tPhilHealth:" + " " + txtph.getText() + "\n");
-        txtbill.setText(txtbill.getText() + "\n\t\tSSS:" + " " + txtsss.getText() + "\n");
-        txtbill.setText(txtbill.getText() + "\n\t\tPhilHealth:" + " " + txtph.getText() + "\n");
-        txtbill.setText(txtbill.getText() + "\n\tNet Pay:" + " " + txtnp.getText() + "\n");
+        txtbill.setText(txtbill.getText() + "\n\tBasic Salary:" + " " + txtbs.getText() + "\n");
+        txtbill.setText(txtbill.getText() + "\n\tDays of Duty:" + " " + txtdaysduty.getText() + "\n");
+        txtbill.setText(txtbill.getText() + "\nGross Salary:" + " " + txtgs.getText() + "\n");
+        txtbill.setText(txtbill.getText() + "\n\tPag-Ibig:" + " " + txtpi.getText() + "\n");
+        txtbill.setText(txtbill.getText() + "\n\tPhilHealth:" + " " + txtph.getText() + "\n");
+        txtbill.setText(txtbill.getText() + "\n\tSSS:" + " " + txtsss.getText() + "\n");
+        txtbill.setText(txtbill.getText() + "\n\tPhilHealth:" + " " + txtph.getText() + "\n");
+        txtbill.setText(txtbill.getText() + "\nNet Pay:" + " " + txtnp.getText() + "\n");
         print();
     }//GEN-LAST:event_jButton3MouseClicked
 

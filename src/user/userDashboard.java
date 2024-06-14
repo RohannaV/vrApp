@@ -227,7 +227,6 @@ public class userDashboard extends javax.swing.JFrame {
 
         usi.u_username.setText(loginForm.l_username);
         usi.u_position.setText(loginForm.type);
-        usi.u_fullname.setText(loginForm.fullname);
         usi.u_email.setText(loginForm.emiel);
         usi.u_accountstat.setText(loginForm.status);
         usi.setVisible(true);
